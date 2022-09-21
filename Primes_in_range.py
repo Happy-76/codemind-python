@@ -1,16 +1,17 @@
-def is_prime(n):
-    if n == 1:
+import math
+def check(n):
+    if n==1:
         return False
-    m = int(n ** 0.5) + 1
-    for i in range(2, m):
-        if n % i == 0:
+    s=int(math.sqrt(n))
+    for j in range(2,s+1):
+        if n%j==0:
             return False
+            break
     return True
-    
-a = int(input())
-b = int(input())
-cnt = 0
-for i in range(a, b + 1):
-    if is_prime(i):
-        cnt += 1
-print(cnt)
+s =int(input())
+e =int(input())
+c=0
+for i in range(s,e+1):
+    if(check(i)):
+        c+=1
+print(c)
